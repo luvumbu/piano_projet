@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Démarrer un son avec la touche M</title>
+</head>
+<body>
+
+  <audio id="DO" src="song/DO.mp3"></audio>
+  <audio id="RE" src="song/RE.mp3"></audio>
+  <audio id="MI" src="song/MI.mp3"></audio>
+  <audio id="FA" src="song/FA.mp3"></audio>
+  <audio id="SOL" src="song/SOL.mp3"></audio>
+  <audio id="LA" src="song/LA.mp3"></audio>
+  <audio id="SI" src="song/SI.mp3"></audio>
+
+
+  <script>
+    document.addEventListener('keydown', function(event) {
+      // Vérifiez si la touche pressée est "m"
+      if (event.key === 'a') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('DO');
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+
+      if (event.key === 'z') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('RE');
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+      if (event.key === 'e') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('MI');
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+      if (event.key === 'r') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('FA');
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+      if (event.key === 't') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('SOL');
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+      if (event.key === 'y') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('LA');
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+      if (event.key === 'u') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('SI');
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+ 
+ 
+
+
+      
+    });
+  </script>
+
+</body>
+</html>

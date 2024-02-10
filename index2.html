@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jouer des notes avec le clavier</title>
+</head>
+<body>
+
+  <audio data-note="DO" src="x/DO.mp3"></audio>
+  <audio data-note="RE" src="x/RE.mp3"></audio>
+ 
+
+  <audio data-note="MI" src="x/MI.mp3"></audio>
+  <audio data-note="FA" src="x/FA.mp3"></audio>
+  <audio data-note="SOL" src="x/SOL.mp3"></audio>
+  <audio data-note="LA" src="x/LA.mp3"></audio>
+  <audio data-note="SI" src="x/SI.mp3"></audio>
+
+  <!-- Ajoutez d'autres balises audio pour les autres notes -->
+
+  <script>
+    var audioElements = document.querySelectorAll('audio');
+
+
+    var tableauDeValeurs = [
+  'si', 'si', 'do', 're', 're', 'do', 'si', 'la',
+  'sol', 'sol', 'la', 'si', 'si', 'la', 'la',
+  'si', 'si', 'do', 're', 're', 'do', 'si', 'la',
+  'sol', 'sol', 'la', 'si', 'la', 'sol', 'sol',
+  'la', 'la', 'si', 'sol', 'la', 'si', 'do',
+  'si', 'sol', 'la', 'si', 'do', 'si', 'la',
+  'sol', 'la', 're', 'si', 'si', 'do', 're',
+  're', 'do', 'si', 'la', 'sol', 'sol',
+  'la', 'si', 'la', 'sol', 'sol', 'la', 'la',
+  'si', 'sol', 'la', 'si', 'do', 'si',
+  'sol', 'la', 'si', 'do', 'si', 'la', 'sol',
+  'la', 're', 'si', 'si', 'do', 're',
+  're', 'do', 'si', 'la', 'sol', 'sol', 'la',
+  'si', 'la', 'sol', 'sol'
+].map(function(valeur) {
+  return valeur.replace('do', 'DO').replace('re', 'RE');
+});
+
+console.log(tableauDeValeurs);
+
+
+
+
+var x = 0 ; 
+    var keyNoteMapping = {
+      'a': 'DO',
+      'z': 'RE',
+      'e': 'MI',
+      'r': 'FA',
+      't': 'SOL',
+      'y': 'LA',
+      'u': 'SI',
+      // Ajoutez d'autres touches et notes au besoin
+    };
+
+    document.addEventListener('keydown', function(event) {
+      // Vérifiez si la touche pressée est dans la correspondance
+      var key = event.key.toLowerCase();
+      if (keyNoteMapping.hasOwnProperty(key)) {
+        // Récupérez l'élément audio correspondant à la note
+        var audioElement = Array.from(audioElements).find(function(audio) {
+          return audio.dataset.note === keyNoteMapping[key];
+        });
+
+        // Si l'élément audio est trouvé, démarrez la lecture
+        if (audioElement) {
+          audioElement.pause();
+          audioElement.currentTime = 0;
+          audioElement.play();
+        }
+      }
+    });
+
+
+
+    const element = document.getElementById("demo");
+setInterval(function() {
+    
+    
+ console.log(x) ; 
+
+
+x ++ ; 
+
+var audio = document.getElementById('DO');
+
+// Démarrez la lecture du son
+audio.play();
+ 
+
+console.log("info") ; 
+}, 1000);
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relancer un son avec la touche M</title>
+</head>
+<body>
+
+  <audio id="myAudio" src="song/DO.mp3"></audio>
+
+  <script>
+    document.addEventListener('keydown', function(event) {
+      // Vérifiez si la touche pressée est "m"
+      if (event.key === 'm') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('myAudio');
+
+        // Réinitialisez la position de lecture à zéro
+        audio.currentTime = 0;
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+    });
+
+
+    const element = document.getElementById("demo");
+setInterval(function() {
+  
+  
+ console.log("ok") ; 
+ var audio = document.getElementById('myAudio');
+
+// Réinitialisez la position de lecture à zéro
+audio.currentTime = 0;
+
+// Démarrez la lecture du son
+audio.play();
+
+
+}, 1000);
+
+
+
+
+
+  </script>
+
+</body>
+</html>

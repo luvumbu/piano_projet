@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture Automatique</title>
+</head>
+<body>
+
+<audio id="maChanson" src="chemin/vers/votre/chanson.mp3" preload="auto"></audio>
+<button id="boutonLecture">Lecture automatique</button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var chanson = document.getElementById("maChanson");
+    var boutonLecture = document.getElementById("boutonLecture");
+
+    // Fonction pour démarrer la lecture automatique
+    function demarrerLectureAutomatique() {
+      chanson.play();
+    }
+
+    // Associer la fonction de démarrage à l'événement du bouton
+    boutonLecture.addEventListener("click", demarrerLectureAutomatique);
+
+    // Démarrer la lecture automatique au chargement de la page (optionnel)
+    demarrerLectureAutomatique();
+  });
+</script>
+
+</body>
+</html>

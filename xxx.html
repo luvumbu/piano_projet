@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relancer un son avec la touche M</title>
+</head>
+<body>
+
+  <audio id="DO" src="song/Nouveau dossier/DOx.mp3"></audio>
+  <audio id="RE" src="song/Nouveau dossier/REx.mp3"></audio>
+  <audio id="MI" src="song/Nouveau dossier/MI.mp3"></audio>
+  <audio id="FA" src="song/Nouveau dossier/FA.mp3"></audio>
+  <audio id="SOL" src="song/Nouveau dossier/SOL.mp3"></audio>
+  <audio id="LA" src="song/Nouveau dossier/LA.mp3"></audio>
+  <audio id="SI" src="song/Nouveau dossier/SIx.mp3"></audio>
+<!--
+
+    <audio id="DO" src="song/DO.mp3"></audio>
+  <audio id="RE" src="song/RE.mp3"></audio>
+  <audio id="MI" src="song/MI.mp3"></audio>
+  <audio id="FA" src="song/FA.mp3"></audio>
+  <audio id="SOL" src="song/SOL.mp3"></audio>
+  <audio id="LA" src="song/LA.mp3"></audio>
+  <audio id="SI" src="song/SI.mp3"></audio>
+-->
+
+
+  <script>
+
+var tableauDeValeurs = [
+      'SI', 'SI', 'DO', 'RE', 'RE', 'DO', 'SI', 'LA',
+      'SOL', 'SOL', 'LA', 'SI', 'SI', 'LA', 'LA',
+      'SI', 'SI', 'DO', 'RE', 'RE', 'DO', 'SI', 'LA',
+      'SOL', 'SOL', 'LA', 'SI', 'LA', 'SOL', 'SOL',
+      'LA', 'LA', 'SI', 'SOL', 'LA', 'SI', 'DO',
+      'SI', 'SOL', 'LA', 'SI', 'DO', 'SI', 'LA',
+      'SOL', 'LA', 'RE', 'SI', 'SI', 'DO', 'RE',
+      'RE', 'DO', 'SI', 'LA', 'SOL', 'SOL',
+      'LA', 'SI', 'LA', 'SOL', 'SOL', 'LA', 'LA',
+      'SI', 'SOL', 'LA', 'SI', 'DO', 'SI',
+      'SOL', 'LA', 'SI', 'DO', 'SI', 'LA', 'SOL',
+      'LA', 'RE', 'SI', 'SI', 'DO', 'RE',
+      'RE', 'DO', 'SI', 'LA', 'SOL', 'SOL', 'LA',
+      'SI', 'LA', 'SOL', 'SOL'
+    ];
+ 
+ 
+var xx= 0 ; 
+
+
+
+
+    document.addEventListener('keydown', function(event) {
+      // Vérifiez si la touche pressée est "m"
+      if (event.key === 'a') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('DO');
+
+        // Réinitialisez la position de lecture à zéro
+        audio.currentTime = 0;
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+      if (event.key === 'z') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('RE');
+
+        // Réinitialisez la position de lecture à zéro
+        audio.currentTime = 0;
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+      if (event.key === 'e') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('MI');
+
+        // Réinitialisez la position de lecture à zéro
+        audio.currentTime = 0;
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+      if (event.key === 'r') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('FA');
+
+        // Réinitialisez la position de lecture à zéro
+        audio.currentTime = 0;
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+      if (event.key === 't') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('SOL');
+
+        // Réinitialisez la position de lecture à zéro
+        audio.currentTime = 0;
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+      if (event.key === 'y') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('LA');
+
+        // Réinitialisez la position de lecture à zéro
+        audio.currentTime = 0;
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+      if (event.key === 'u') {
+        // Récupérez l'élément audio
+        var audio = document.getElementById('SI');
+
+        // Réinitialisez la position de lecture à zéro
+        audio.currentTime = 0;
+
+        // Démarrez la lecture du son
+        audio.play();
+      }
+ 
+    });
+
+
+    const element = document.getElementById("demo");
+setInterval(function() {
+  
+  
+ 
+
+         
+
+ console.log(tableauDeValeurs[xx]) ; 
+
+
+ xx++; 
+
+
+
+
+ var audio = document.getElementById(tableauDeValeurs[xx]);
+
+// Réinitialisez la position de lecture à zéro
+audio.currentTime = 0;
+
+// Démarrez la lecture du son
+audio.play();
+
+
+}, 450);
+
+
+
+
+
+  </script>
+
+</body>
+</html>
