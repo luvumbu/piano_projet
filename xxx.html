@@ -1,20 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Relancer un son avec la touche M</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
 
-  <audio id="DO" src="song/Nouveau dossier/DOx.mp3"></audio>
+
+
+
+
+
+
+  <div class="piano">
+    <div class="do" onclick="piano(this)">DO</div>
+    <div class="re" onclick="piano(this)">RE</div>
+
+    <div class="mi" onclick="piano(this)">MI</div>
+    <div class="fa" onclick="piano(this)">FA</div>
+
+    <div class="sol" onclick="piano(this)" >SOL</div>
+    <div class="la" onclick="piano(this)" >LA</div>
+
+    <div class="si" onclick="piano(this)">SI</div>
+  </div>
+
+
+  <div class="information_touche" id="information_touche">touches </div>
+  <div class="information_touche" id="information_touche2">touches </div>
+
+  <style>
+    #information_touche,#information_touche2{
+      text-align: center;
+      margin-top: 100px;
+    }
+    #div_piano {
+      width: 80%;
+      margin: auto;
+    }
+
+    #div_piano img {
+      width: 100%;
+      margin: auto;
+    }
+    .piano{
+      display: flex;
+      justify-content: center;
+    }
+    .piano div {
+padding: 40px;
+border:1px solid black ; 
+ 
+padding-top: 300px;
+    }
+
+    .piano div:hover {
+padding: 40px;
+border:1px solid black ; 
+cursor: pointer;
+ 
+padding-top: 300px;
+background-color: rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <audio id="DO" src="song/DO.mp3"></audio>
   <audio id="RE" src="song/Nouveau dossier/REx.mp3"></audio>
   <audio id="MI" src="song/Nouveau dossier/MI.mp3"></audio>
   <audio id="FA" src="song/Nouveau dossier/FA.mp3"></audio>
   <audio id="SOL" src="song/Nouveau dossier/SOL.mp3"></audio>
   <audio id="LA" src="song/Nouveau dossier/LA.mp3"></audio>
   <audio id="SI" src="song/Nouveau dossier/SIx.mp3"></audio>
-<!--
+  <!--
 
     <audio id="DO" src="song/DO.mp3"></audio>
   <audio id="RE" src="song/RE.mp3"></audio>
@@ -28,7 +90,7 @@
 
   <script>
 
-var tableauDeValeurs = [
+    var tableauDeValeurs = [
       'SI', 'SI', 'DO', 'RE', 'RE', 'DO', 'SI', 'LA',
       'SOL', 'SOL', 'LA', 'SI', 'SI', 'LA', 'LA',
       'SI', 'SI', 'DO', 'RE', 'RE', 'DO', 'SI', 'LA',
@@ -44,14 +106,14 @@ var tableauDeValeurs = [
       'RE', 'DO', 'SI', 'LA', 'SOL', 'SOL', 'LA',
       'SI', 'LA', 'SOL', 'SOL'
     ];
- 
- 
-var xx= 0 ; 
+
+
+    var xx = 0;
 
 
 
 
-    document.addEventListener('keydown', function(event) {
+    document.addEventListener('keydown', function (event) {
       // Vérifiez si la touche pressée est "m"
       if (event.key === 'a') {
         // Récupérez l'élément audio
@@ -123,42 +185,140 @@ var xx= 0 ;
         // Démarrez la lecture du son
         audio.play();
       }
+
+
+var name_t = "" ; 
+
+      switch(event.key) {
+  case "a":
+  name_t = "DO" ;
+    break;
  
+    case "z":
+  name_t = "RE" ;
+    break;
+ 
+    case "e":
+  name_t = "MI" ;
+    break;
+ 
+    case "r":
+  name_t = "FA" ;
+    break;
+ 
+    case "t":
+  name_t = "SOL" ;
+    break;
+ 
+    case "y":
+  name_t = "LA" ;
+    break;
+ 
+  default:
+  name_t = "SI" ;
+}
+
+      document.getElementById("information_touche2").innerHTML=name_t; 
+
+const myTimeout = setTimeout(myGreeting, 600);
+
+function myGreeting() {
+  document.getElementById("information_touche2").innerHTML=""; 
+
+}
+
     });
 
 
     const element = document.getElementById("demo");
-setInterval(function() {
-  
-  
+
+
+    /*
+    setInterval(function () {
+
+
+
+
+
+
+      console.log(tableauDeValeurs[xx]);
+
+
+      xx++;
+
+
+
+
+      var audio = document.getElementById(tableauDeValeurs[xx]);
+
+      // Réinitialisez la position de lecture à zéro
+      audio.currentTime = 0;
+
+      // Démarrez la lecture du son
+      audio.play();
+
+
+    }, 450);
+
+
+*/
+
+
+function piano(_this){
  
-
-         
-
- console.log(tableauDeValeurs[xx]) ; 
-
-
- xx++; 
+        // Récupérez l'élément audio
 
 
 
 
- var audio = document.getElementById(tableauDeValeurs[xx]);
+        switch(_this.className) {
+  case "do":
+  var audio = document.getElementById('DO');
+    break;
+    case "re":
+  var audio = document.getElementById('RE');
+    break;
+    case "mi":
+  var audio = document.getElementById('MI');
+    break;
+    case "fa":
+  var audio = document.getElementById('FA');
+    break;
+    case "sol":
+  var audio = document.getElementById('SOL');
+    break;
+    case "la":
+  var audio = document.getElementById('LA');
+    break;
+    case "si":
+  var audio = document.getElementById('SI');
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+     
 
-// Réinitialisez la position de lecture à zéro
-audio.currentTime = 0;
+        // Réinitialisez la position de lecture à zéro
+        audio.currentTime = 0;
 
-// Démarrez la lecture du son
-audio.play();
+        // Démarrez la lecture du son
+        audio.play();
+document.getElementById("information_touche").innerHTML=_this.className ; 
 
+const myTimeout = setTimeout(myGreeting, 600);
 
-}, 450);
+function myGreeting() {
+  document.getElementById("information_touche").innerHTML=""; 
 
-
-
+}
+}
 
 
   </script>
 
 </body>
+
 </html>
